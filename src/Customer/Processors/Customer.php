@@ -3,9 +3,6 @@
 use Illuminate\Support\Arr;
 use App\User as UserModel;
 use Orchestra\Model\Value\Meta;
-use Illuminate\Support\Facades\Event;
-use Orchestra\Foundation\Processor\Processor;
-use Shopalicious\Support\Traits\FireableEventTrait;
 use Shopalicious\Customer\Model\Customer as CustomerModel;
 use Shopalicious\Customer\Http\Validators\Customer as Validator;
 use Shopalicious\Customer\Http\Presenters\Customer as Presenter;
@@ -14,8 +11,6 @@ use Shopalicious\Support\Contracts\Listener\ResourceInterface as ResourceListene
 
 class Customer extends Processor
 {
-    use FireableEventTrait;
-
     const MODULENAME = 'customers';
 
     public function __construct(Presenter $presenter, Validator $validator)
@@ -126,10 +121,5 @@ class Customer extends Processor
         $customer->save();
 
         return $customer;
-    }
-
-    protected function fireEvents($eventAction, $parameters = [])
-    {
-        Event::fire("shopalicious.customers: {$eventAction}", $parameters);
     }
 }
