@@ -9,7 +9,8 @@
         "php": ">=5.5.9",
         "orchestra/foundation": "3.1.*",
         "orchestra/installer": "~3.1",
-        "orchestra/control": "~3.1"
+        "orchestra/control": "~3.1",
+        "wikimedia/composer-merge-plugin": "~1.1"
     },
     "require-dev": {
         "orchestra/studio": "~3.1",
@@ -22,8 +23,7 @@
             "resources/database"
         ],
         "psr-4": {
-            "App\\": "app/",
-            "Shopalicious\\": "src/"
+            "App\\": "app/"
         }
     },
     "autoload-dev": {
@@ -48,6 +48,14 @@
         "post-create-project-cmd": [
             "php artisan key:generate"
         ]
+    },
+    "extra": {
+        "merge-plugin": {
+            "include": [
+                "workbench/*/*/composer.json",
+                "workbench/*/*/*/*/composer.json"
+            ]
+        }
     },
     "config": {
         "preferred-install": "dist"
