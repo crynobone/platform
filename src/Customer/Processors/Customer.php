@@ -5,6 +5,7 @@ use App\User as UserModel;
 use Orchestra\Model\Value\Meta;
 use Illuminate\Support\Facades\Event;
 use Orchestra\Foundation\Processor\Processor;
+use Shopalicious\Support\Traits\FireableEventTrait;
 use Shopalicious\Customer\Model\Customer as CustomerModel;
 use Shopalicious\Customer\Http\Validators\Customer as Validator;
 use Shopalicious\Customer\Http\Presenters\Customer as Presenter;
@@ -13,6 +14,10 @@ use Shopalicious\Support\Contracts\Listener\ResourceInterface as ResourceListene
 
 class Customer extends Processor
 {
+    use FireableEventTrait;
+
+    const MODULENAME = 'customers';
+
     public function __construct(Presenter $presenter, Validator $validator)
     {
         $this->presenter = $presenter;
@@ -56,7 +61,7 @@ class Customer extends Processor
         ];
         $customer = $this->saveCustomerProfile(new CustomerModel, $profile);
 
-        $this->fireEvents('created', [$customer]);
+        $this->fireEvent(self::MODULENAME, 'created', [$customer]);
     }
 
     public function edit(ResourceListener $listener, $customerId)
@@ -84,7 +89,7 @@ class Customer extends Processor
         ];
         $customer = $this->saveCustomerProfile($model, $profile);
 
-        $this->fireEvents('updated', [$customer]);
+        $this->fireEvent(self::MODULENAME, 'updated', [$customer]);
     }
 
     public function destroy(ResourceListener $listener, $customerId)
@@ -94,7 +99,7 @@ class Customer extends Processor
         $customer->account->delete();
         $customer->delete();
 
-        $this->fireEvents('deleted', [$customer]);
+        $this->fireEvent(self::MODULENAME, 'deleted', [$customer]);
     }
 
     protected function saveCustomerAccount(UserModel $user, array $data)
