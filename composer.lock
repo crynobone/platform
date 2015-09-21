@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b8d8ad5ae169f4337f44cc4b93823661",
-    "content-hash": "2208cadbbcf36c08843e746be923cec1",
+    "hash": "0f6c60bc504c1e9ff5dafbca169f5669",
+    "content-hash": "03ab5e7cbdbdafaf5ef05644fb17ecac",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -3067,6 +3067,47 @@
             "time": "2015-05-11 14:41:42"
         },
         {
+            "name": "laravel/homestead",
+            "version": "v2.1.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/homestead.git",
+                "reference": "5690eca04402f6bc16b6fb785daeb0f435b65299"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/homestead/zipball/5690eca04402f6bc16b6fb785daeb0f435b65299",
+                "reference": "5690eca04402f6bc16b6fb785daeb0f435b65299",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4",
+                "symfony/console": "~2.0",
+                "symfony/process": "~2.0"
+            },
+            "bin": [
+                "homestead"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Homestead\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "A virtual machine for web artisans.",
+            "time": "2015-09-02 02:20:48"
+        },
+        {
             "name": "mockery/mockery",
             "version": "0.9.4",
             "source": {
@@ -3130,6 +3171,57 @@
                 "testing"
             ],
             "time": "2015-04-02 19:54:00"
+        },
+        {
+            "name": "orchestra/studio",
+            "version": "v3.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/orchestral/studio.git",
+                "reference": "ee73ad5bfa8fe12d5332bd43d6787c3ac6f85b5d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/orchestral/studio/zipball/ee73ad5bfa8fe12d5332bd43d6787c3ac6f85b5d",
+                "reference": "ee73ad5bfa8fe12d5332bd43d6787c3ac6f85b5d",
+                "shasum": ""
+            },
+            "require": {
+                "orchestra/support": "~3.1.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "illuminate/console": "~5.1.0",
+                "illuminate/filesystem": "~5.1.0",
+                "mockery/mockery": "0.9.*"
+            },
+            "suggest": {
+                "wikimedia/composer-merge-plugin": "Add workbench support for Orchestra Platform (~1.1)."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Orchestra\\Studio\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mior Muhammad Zaki",
+                    "email": "crynobone@gmail.com",
+                    "homepage": "https://github.com/crynobone"
+                }
+            ],
+            "description": "Code Generator for Orchestra Platform",
+            "time": "2015-09-12 19:20:12"
         },
         {
             "name": "orchestra/testbench",
