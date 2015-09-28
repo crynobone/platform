@@ -1,16 +1,14 @@
 {
-    "name": "orchestra/platform",
-    "description": "Orchestra Platform",
-    "homepage": "http://orchestraplatform.com/docs/latest/",
-    "keywords": ["framework", "laravel", "orchestra-platform", "orchestral"],
+    "name": "shopalicious/platform",
+    "description": "Shopalicious Platform",
     "license": "MIT",
     "type": "project",
     "require": {
         "php": ">=5.5.9",
+        "shopalicious/blocks": "dev-master",
         "orchestra/foundation": "3.1.*",
         "orchestra/installer": "~3.1",
-        "orchestra/control": "~3.1",
-        "wikimedia/composer-merge-plugin": "~1.1"
+        "orchestra/control": "~3.1"
     },
     "require-dev": {
         "orchestra/studio": "~3.1",
@@ -31,6 +29,12 @@
             "tests/TestCase.php"
         ]
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/shopalicious/blocks.git"
+        }
+    ],
     "scripts": {
         "post-install-cmd": [
             "php artisan clear-compiled",
@@ -49,15 +53,9 @@
             "php artisan key:generate"
         ]
     },
-    "extra": {
-        "merge-plugin": {
-            "include": [
-                "workbench/*/*/composer.json",
-                "workbench/*/*/*/*/composer.json"
-            ]
-        }
-    },
     "config": {
         "preferred-install": "dist"
-    }
+    },
+    "prefer-stable": true,
+    "minimum-stablity": "dev"
 }
