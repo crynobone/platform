@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "dc1f4394680e71b44a8000527c1c5662",
-    "content-hash": "ebc8b85608d826f38d9683cd90091332",
+    "hash": "3d13801759e31bb698c905ae2a231ebe",
+    "content-hash": "2dd6c414f1c1676b41060d48b93a7f51",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -3885,23 +3885,27 @@
             "time": "2015-07-16 15:26:57"
         },
         {
-            "name": "shopalicious/blocks",
+            "name": "shopalicious/foundation",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/shopalicious/blocks.git",
-                "reference": "1f7e32ec85531e72d6874fa2ac14ea7a8c3abce7"
+                "url": "https://github.com/shopalicious/foundation.git",
+                "reference": "57b4b06a3e569823aebfc19001edc4356201d8bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shopalicious/blocks/zipball/1f7e32ec85531e72d6874fa2ac14ea7a8c3abce7",
-                "reference": "1f7e32ec85531e72d6874fa2ac14ea7a8c3abce7",
+                "url": "https://api.github.com/repos/shopalicious/foundation/zipball/57b4b06a3e569823aebfc19001edc4356201d8bd",
+                "reference": "57b4b06a3e569823aebfc19001edc4356201d8bd",
                 "shasum": ""
             },
             "require": {
+                "illuminate/contracts": "~5.1",
                 "lewis/presenter": "~0.1",
                 "omnipay/omnipay": "~2.0",
                 "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.1"
             },
             "type": "library",
             "autoload": {
@@ -3909,15 +3913,20 @@
                     "Shopalicious\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "ShopaliciousTestCase\\": "tests/"
+                }
+            },
             "license": [
                 "MIT"
             ],
             "description": "Shopalicious core components",
             "support": {
-                "source": "https://github.com/shopalicious/blocks/tree/master",
-                "issues": "https://github.com/shopalicious/blocks/issues"
+                "source": "https://github.com/shopalicious/foundation/tree/master",
+                "issues": "https://github.com/shopalicious/foundation/issues"
             },
-            "time": "2015-09-28 02:27:39"
+            "time": "2015-09-29 05:28:13"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -6201,7 +6210,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "shopalicious/blocks": 20
+        "shopalicious/foundation": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
